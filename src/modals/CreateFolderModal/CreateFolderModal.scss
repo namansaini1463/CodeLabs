@@ -1,0 +1,43 @@
+.modal-container {
+  .modal-wrapper {
+    .modal-body {
+      h3 {
+        font-size: 2rem;
+      }
+      button {
+        font-family: "Kode Mono", monospace;
+        font-weight: bold;
+        cursor: pointer;
+
+        padding: 0.6rem 1.4rem;
+
+        font-size: 1rem;
+
+        border-radius: 50px;
+        border: none;
+
+        transition-duration: 250ms;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      button:hover {
+        box-shadow: 1px 1px 6px #d4d4d4;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .modal-wrapper {
+    transform: scale(0.9);
+
+    .modal-body {
+      h3 {
+        font-size: 1.6rem !important;
+      }
+    }
+  }
+}

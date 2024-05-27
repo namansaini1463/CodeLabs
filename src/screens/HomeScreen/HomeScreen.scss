@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Reddit+Mono:wght@200..900&display=swap");
+@import url("../../components/LeftHomeScreen/LeftHomeScreen.scss");
+@import url("../../components/RightHomeScreen/RightHomeScreen.scss");
+
+.home-container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+
+  height: 100vh;
+
+  background-color: #eee;
+  font-family: "Kode Mono", monospace;
+}
+
+.my-mui-icon {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .home-container {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+}

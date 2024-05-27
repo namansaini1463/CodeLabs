@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Reddit+Mono:wght@200..900&display=swap");
+
+@import url(./EditorContainer.scss);
+
+.content-container {
+  font-family: "Kode Mono", monospace;
+  background-color: #222831;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eeeeee;
+    gap: 1rem;
+
+    padding: 0.6rem 0;
+    background-color: #222831;
+
+    .code-header-logo {
+      height: 5rem;
+    }
+  }
+  .code-container {
+    flex-grow: 1;
+
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #31363f;
+    grid-template-columns: 65fr 35fr;
+
+    .editor-container {
+      grid-row: 1/3;
+    }
+
+    .input-container,
+    .output-container {
+      font-size: 1.4rem;
+
+      textarea {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 0.4rem;
+        font-size: 1rem;
+        resize: none;
+      }
+
+      .input-header,
+      .output-header {
+        background-color: #222831;
+        color: #eeeeee;
+        padding: 1rem 1.6rem;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .input-container {
+      background-color: #eeeeee;
+      display: flex;
+      flex-direction: column;
+
+      .input-header {
+        input {
+          font-family: inherit;
+        }
+
+        label {
+          font-size: 1rem;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          outline: 1px solid white;
+
+          cursor: pointer;
+          background-color: #31363f;
+          color: #bcbcbc;
+          padding: 0.2rem 0.6rem;
+
+          border-radius: 2rem;
+
+          transition: 250ms;
+        }
+
+        label:hover {
+          transform: scale(1.01);
+          box-shadow: 0 0 10px #5c5c5c;
+          outline: 1px solid white;
+        }
+      }
+    }
+    .output-container {
+      display: flex;
+      flex-direction: column;
+      .output-header {
+        button {
+          font-family: inherit;
+          font-size: 1rem;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+
+          cursor: pointer;
+          background-color: #31363f;
+          color: #bcbcbc;
+          padding: 0.2rem 0.6rem;
+          border-radius: 2rem;
+
+          transition: 250ms;
+          outline: 1px solid white;
+        }
+
+        button:hover {
+          transform: scale(1.01);
+          box-shadow: 0 0 10px #5c5c5c;
+          outline: 1px solid white;
+        }
+      }
+    }
+  }
+
+  .fullpage-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .loader {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background-color: transparent;
+
+      border-color: transparent;
+      border: 0.8rem solid rgba(146, 146, 146, 0.4);
+      border-left-color: #db3f3f;
+
+      animation: 0.8s loader infinite linear;
+    }
+  }
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .editor-container-title {
+    font-size: 1.6rem !important;
+  }
+  .left-editor-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem !important;
+  }
+  .right-editor-header {
+    display: flex;
+    flex-direction: column;
+
+    .editor-select {
+      width: 100%;
+    }
+  }
+
+  .input-header,
+  .output-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .editor-footer-item {
+    * {
+      font-size: small;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .editor-container-title {
+    font-size: 2rem !important;
+  }
+  .input-header,
+  .output-header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header-container {
+    height: 10vh;
+  }
+  .editor-container {
+    height: 85vh;
+  }
+
+  .input-container,
+  .output-container {
+    height: 40vh;
+  }
+
+  .code-container {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .editor-header-title-container {
+    margin-right: 2.5rem;
+  }
+  .editor-container-title {
+    font-size: 1.6rem !important;
+  }
+
+  .header-container {
+    height: 10vh;
+  }
+  .editor-container {
+    height: 85vh;
+  }
+
+  .editor-footer {
+    grid-template-columns: 1fr 1fr !important;
+
+    .run-code {
+      grid-column: 1/-1 !important;
+    }
+  }
+}
