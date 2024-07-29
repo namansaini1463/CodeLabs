@@ -7,7 +7,7 @@ import "./RightHomeScreen.scss";
 
 // eslint-disable-next-line react/prop-types
 function RightHomeScreen({ folders }) {
-  console.log(folders[0]);
+  //console.log(folders[0]);
 
   // return <h1>Hello</h1>;
 
